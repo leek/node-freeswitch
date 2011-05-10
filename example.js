@@ -1,6 +1,6 @@
-var net = require('net'),
-querystring = require('querystring'),
-EventSocket = require('./index');
+var net         = require('net'),
+    querystring = require('querystring'),
+    EventSocket = require('./index');
 
 var server = net.createServer(function (socket) {
 	
@@ -15,8 +15,8 @@ var server = net.createServer(function (socket) {
         this.eventsocket.connect();
         this.eventsocket.on("connect", function(response){
             console.log("Connected to FreeSWITCH!");
-            self.answer();
-            self.playback("/usr/local/freeswitch/sounds/en/us/callie/ivr/8000/ivr-welcome_to_freeswitch.wav");
+            this.answer();
+            this.playback("/usr/local/freeswitch/sounds/en/us/callie/ivr/8000/ivr-welcome_to_freeswitch.wav");
         });
     })
 	
