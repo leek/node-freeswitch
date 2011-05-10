@@ -2,6 +2,7 @@ var net         = require('net'),
     querystring = require('querystring'),
     EventSocket = require('./index');
 
+// Server
 var server = net.createServer(function (socket) {
 	
     // onConnect
@@ -37,4 +38,10 @@ var server = net.createServer(function (socket) {
 server.listen(8084, "127.0.0.1", function () {
     address = server.address();
     console.log("Server started listening on %s:%d\n", address.address, address.port);
+});
+
+// Process
+process.on("uncaughtException", function(error) {
+    console.log("uncaughtException - Closing server...")
+    server.close();
 });
