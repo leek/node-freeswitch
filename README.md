@@ -1,4 +1,4 @@
-# node-freeswitch![Project status](http://stillmaintained.com/leek/node-eventsocket.png)
+# node-freeswitch ![Project status](http://stillmaintained.com/leek/node-eventsocket.png)
 
 This project's intent was to emulate the Python/Twisted [eventsocket](https://github.com/fiorix/eventsocket) module in Node.js.
 
